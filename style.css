@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+label:focus-visible {
+    outline: none;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background: #8ce7bf;
+    background: #efefef;
+    
+}
+
+.body-no-overflow {
+    overflow: hidden;
+}
+.container {
+    width: 1250px;
+    margin: 0 auto;
+    padding: 0 5px;
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+.basket__view {
+    position: relative;
+    width: max-content;
+    padding: 5px;
+
+}
+
+.basket__count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.basket__count--active {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #ff3f40;
+}
+
+.basket {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 35px;
+}
+
+.cards {
+    padding: 45px 0;
+}
+
+.card__list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    margin:auto;
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    padding: 40px 0;
+    border-radius: 5px;
+    background: #ffffff;
+}
+
+.card__image-view, .card__info {
+    flex: 1 calc(50% - 40px);
+}
+
+.card__image-view {
+    position: relative;
+    left: -50px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background: radial-gradient(#e5f89e, #96e001);
+}
+
+.card__image {
+    position: absolute;
+    left: -56px;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.card__title {
+    margin-bottom: 2.5px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #4c4c4c;
+}
+
+.card__code {
+    font-size: 0.7rem;
+    color: #a6a6a6;
+}
+
+.card__price {
+    display: flex;
+    align-items: flex-end;
+    gap: 9px;
+    color: #ff3f40;
+}
+
+.card__price-currency {
+    font-size: 1.2rem;
+}
+
+.card__price-value {
+    font-size: 2.9rem;
+    line-height: 0.8;
+}
+
+.cad__sub-title {
+    margin-bottom: 12px;
+    font-size: 0.7rem;
+    letter-spacing: 1.2px;
+    color: #a6a6a6;
+}
+
+.card__select-list {
+    display: flex;
+    gap: 2px;
+
+}
+
+.card__select-item {
+    width: 35px;
+    height: 35px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.card__select-item:hover, .card__select-item:focus {
+    border: 1px solid black;
+}
+
+.card__benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card__benefits-item {
+    position: relative;
+    padding-left: 10px;
+    font-size: 0.8rem;
+}
+
+.card__benefits-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background: #000000;
+}
+
+.card__button {
+    
+    padding: 19px 59px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ff3f40;
+    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    cursor: pointer;
+}
+
+.card__button:hover, .card__button:focus {
+    background: radial-gradient(#e5f89e, #96e001);
+    color: #ff3f40;
+}
+
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    height: 100vh;
+    width: 25%;
+    padding: 25px;
+    background:#DBDBDB;
+    z-index: 2;
+}
+
+.modal--active {
+    display: flex;
+}
+
+.modal__title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #4c4c4c;
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.modal-form__input {
+    width: 100%;
+    padding: 25px 30px;
+    border: none;
+    font-size: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    
+}
+
+.modal-form__input:hover, .modal-form__input:focus-visible {
+    outline: none;
+}
+
+.modal__description {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #4c4c4c;
+}
+
+.modal__button {
+    padding: 25px 10px;
+    border: none;
+    font-size: 28px;
+    background: #ff3f40;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.paranja {
+    display: none;
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background: #5a4b4bdb;
+    z-index: 1;
+}
+
+.paranja--active {
+    display: block;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .card__info {
+        gap: 15px;
+    }  
+
+    .card__image-view {
+        left: -20px;
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+    
+    .container {
+        width: 972px;
+    }
+
+    .card {
+        gap: 15px;
+        width: calc(100% - 100px)
+    }
+
+    .card__image-view {
+        left: 0;
+        justify-content: center;
+    }
+
+    .card__image {
+        position: static;
+    }
+
+    .card__image-view, .card__info {
+        flex: 1 calc(50% - 15px);
+    }
+
+
+}
+
+@media screen and (max-width: 972px) {
+
+    .container {
+        width: 768px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        width: 100%;
+    }
+
+    /* .card {
+        flex-direction: column-reverse;
+        height: 100vh;
+        padding: 15px 10px;
+
+    } */
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .card {
+        flex-direction: column-reverse;
+        height: 100vh;
+        padding: 15px 10px;
+
+    }
+
+}
