@@ -360,6 +360,10 @@ body {
         flex: 1 calc(50% - 15px);
     }
 
+    .modal {
+        width: 35%;
+    }    
+
 
 }
 
@@ -369,6 +373,10 @@ body {
         width: 768px;
     }
 
+    .modal {
+        width: 50%;
+    }  
+
 }
 
 @media screen and (max-width: 768px) {
@@ -377,12 +385,9 @@ body {
         width: 100%;
     }
 
-    /* .card {
-        flex-direction: column-reverse;
-        height: 100vh;
-        padding: 15px 10px;
-
-    } */
+    .modal {
+        width: 75%;
+    }
 
 
 }
@@ -394,6 +399,10 @@ body {
         height: 100vh;
         padding: 15px 10px;
 
+    }
+
+    .modal {
+        width: 100%;
     }
 
 }

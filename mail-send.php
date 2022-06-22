@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset"UTF-8 />
     
-    <title>Ваше сообщение успешно отправлено</title>
+    <title>fggВаше сообщение успешно отправлено</title>
 </script>
 
 </head>
@@ -12,8 +12,7 @@
 
 <?php
 
-if(!empty($_GET['phone']) and !empty($_GET['mail'])){
-    var_dump($_GET)
+if(!empty($_GET['name']) and !empty($_GET['tel'])){
     $name = trim(strip_tags($_GET['name']));
     $phone = trim(strip_tags($_GET['tel']));
     $product = trim(strip_tags($_GET['productItem']));
@@ -21,7 +20,8 @@ if(!empty($_GET['phone']) and !empty($_GET['mail'])){
     
     $mailTo = 'work.alex966@gmail.com';
     $mailTema = 'Заявка на покупку';
-    $mailMassage = 'Заявку отправил: Телефон:'. $phone.'    '. 'Email:'. $mail . 'Товар:' . $product;
+    $mailMassage = 'Заявку отправил: Имя:'. $name. 'Телефон:'. $phone . 'Товар:' . $product;
+    var_dump($mailMassage);
 
     
     

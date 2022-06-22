@@ -42,15 +42,15 @@ document.addEventListener("DOMContentLoaded",  () => {
     })  
 
     //валидация
-    const name = modal.querySelector('input[name="name"]')
-    const tel = modal.querySelector('input[name="tel"]')
-    const product = modal.querySelector('input[name="product-name"]')
+    const inputName = modal.querySelector('input[name="name"]')
+    const inputTel = modal.querySelector('input[name="tel"]')
+    const inputProduct = modal.querySelector('input[name="product-name"]')
 
-    name.pattern = '[a-zA-Zа-яА-Я]{1,15}'
+    inputName.pattern = '[a-zA-Zа-яА-Я]{1,15}'
 
     // tel.pattern = "/+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/"
-    tel.value="+7(___)___-__-__"
-    tel.addEventListener("input", mask, false);
+    inputTel.value="+7(___)___-__-__"
+    inputTel.addEventListener("input", mask, false);
     
     // отправка mail
     const massageSend = document.querySelector('.masage-successful')
@@ -58,20 +58,20 @@ document.addEventListener("DOMContentLoaded",  () => {
        
         event.preventDefault()
         console.log('OK')
-        const phone = name.value
-        const mail = tel.value
-        const productItem = product.value
+        const name = inputName.value
+        const tel = inputTel.value
+        const productItem = inputProduct.value
         const paramsString = {
-            phone,
-            mail,
+            name,
+            tel,
             productItem
         }
         const urlParams = new URLSearchParams(paramsString).toString()
         fetch('mail-send.php?' + urlParams)
         .then( () => {
-            name.value = ''
-            tel.value = ''
-            productItem.value = ''
+            inputName.value = ''
+            inputTel.value = ''
+            inputProduct.value = ''
 
             setTimeout( () => {
                 massageSend.classList.add('masage-successful--active')
