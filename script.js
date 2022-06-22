@@ -84,11 +84,13 @@ document.addEventListener("DOMContentLoaded",  () => {
         
     })
 
-    
-}) 
-// metrica 
+    // metrica 
 
 modalButton.addEventListener('click',ym(89276725,'reachGoal','button-order'))
+
+    
+}) 
+
 
 
 function mask(e) {
