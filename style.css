@@ -1,3 +1,13 @@
+:root {
+    --fon: #efefef;
+    --white: #ffffff;
+    --matterhorn: #4c4c4c;
+    --dark-grey: #a6a6a6;
+    --radical-red: #ff3f40;
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -19,8 +29,7 @@ label:focus-visible {
 
 body {
     font-family: 'Raleway', sans-serif;
-    background: #8ce7bf;
-    background: #efefef;
+    background: var(--fon);
     
 }
 
@@ -36,37 +45,6 @@ body {
 
 .header {
     margin-bottom: 25px;
-}
-
-.basket__view {
-    position: relative;
-    width: max-content;
-    padding: 5px;
-
-}
-
-.basket__count {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-
-}
-
-.basket__count--active {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background: #ff3f40;
-}
-
-.basket {
-    display: flex;
-    justify-content: flex-end;
-    padding: 15px 35px;
 }
 
 .cards {
@@ -87,7 +65,7 @@ body {
     display: flex;
     padding: 40px 0;
     border-radius: 5px;
-    background: #ffffff;
+    background: var(--white);
 }
 
 .card__image-view, .card__info {
@@ -119,19 +97,19 @@ body {
     margin-bottom: 2.5px;
     font-size: 1.5rem;
     font-weight: 900;
-    color: #4c4c4c;
+    color: var(--matterhorn);
 }
 
 .card__code {
     font-size: 0.7rem;
-    color: #a6a6a6;
+    color: var(--dark-grey);
 }
 
 .card__price {
     display: flex;
     align-items: flex-end;
     gap: 9px;
-    color: #ff3f40;
+    color: var(--radical-red);
 }
 
 .card__price-currency {
@@ -147,7 +125,7 @@ body {
     margin-bottom: 12px;
     font-size: 0.7rem;
     letter-spacing: 1.2px;
-    color: #a6a6a6;
+    color: var(--dark-grey);
 }
 
 .card__select-list {
@@ -201,14 +179,14 @@ body {
     letter-spacing: 1.3px;
     text-transform: uppercase;
     color: #fff;
-    background-color: #ff3f40;
-    box-shadow: 2px 2px 25px -7px #4c4c4c;
+    background-color: var(--radical-red);
+    box-shadow: 2px 2px 25px -7px var(--matterhorn);
     cursor: pointer;
 }
 
 .card__button:hover, .card__button:focus {
     background: radial-gradient(#e5f89e, #96e001);
-    color: #ff3f40;
+    color: var(--radical-red);
 }
 
 /* modal */
@@ -249,7 +227,7 @@ body {
 .modal__title {
     font-size: 24px;
     font-weight: 900;
-    color: #4c4c4c;
+    color: var(--matterhorn);
 }
 
 .modal-form {
@@ -264,7 +242,7 @@ body {
     padding: 25px 30px;
     border: none;
     font-size: 20px;
-    background: #ffffff;
+    background: var(--white);
     border-radius: 10px;
     
 }
@@ -276,17 +254,17 @@ body {
 .modal__description {
     margin-bottom: 15px;
     font-size: 20px;
-    color: #4c4c4c;
+    color: var(--matterhorn);
 }
 
 .modal__button {
     padding: 25px 10px;
     border: none;
     font-size: 28px;
-    background: #ff3f40;
+    background: var(--radical-red);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    color: #ffffff;
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -312,7 +290,11 @@ body {
     justify-content: center;
     gap: 25px;
     padding: 25px;
-    background: #ffffff;
+    background: var(--white);
+}
+
+.masage-successful--active {
+    display: flex;
 }
 
 .masage-successful__imege {

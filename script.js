@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded",  () => {
     tel.addEventListener("input", mask, false);
     
     // отправка mail
+    const massageSend = document.querySelector('.masage-successful')
     modalForm.addEventListener('submit', (event) => {
        
         event.preventDefault()
@@ -71,12 +72,23 @@ document.addEventListener("DOMContentLoaded",  () => {
             name.value = ''
             tel.value = ''
             productItem.value = ''
+
+            setTimeout( () => {
+                massageSend.classList.add('masage-successful--active')
+            },0)
+            
+            setTimeout( () => {
+                massageSend.classList.remove('masage-successful--active')
+            },5000)
         })
         
     })
 
     
 }) 
+// metrica 
+
+modalButton.addEventListener('click',ym(89276725,'reachGoal','button-order'))
 
 
 function mask(e) {
