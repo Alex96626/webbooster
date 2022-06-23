@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded",  () => {
     const body = document.querySelector('body')
     const modalClose = document.querySelector('.modal-close')
     const modal = document.querySelector('.modal')
-    const paranja = document.querySelector('.paranja')
+    const overlay = document.querySelector('.overlay')
 
     const cardList = document.querySelector('.card__list')
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded",  () => {
     const modalButton = document.querySelector('.button-order')
 
     modalClose.addEventListener('click', () => {
-        toggleModal(modal, paranja, body) 
+        toggleModal(modal, overlay, body) 
     })
 
     cardList.addEventListener('click', (event) => {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",  () => {
         const productName = card.querySelector('.card__title').textContent
 
         if(event.target !== card.querySelector('.card__button')) return
-        toggleModal(modal, paranja, body) 
+        toggleModal(modal, overlay, body) 
 
         // заполнение формы 
         modalForm.querySelector('input[name="product-name"]').value = productName
@@ -116,8 +116,8 @@ function setCursorPosition(pos, e) {
 }
 
 
-function toggleModal(modal, paranja, body) {
+function toggleModal(modal, overlay, body) {
     modal.classList.toggle('modal--active')
-    paranja.classList.toggle('paranja--active')
+    overlay.classList.toggle('overlay--active')
     body.classList.toggle('body-no-overflow')
 }

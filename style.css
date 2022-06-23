@@ -310,7 +310,7 @@ body {
     text-align: center;
 }
 
-.paranja {
+.overlay {
     display: none;
     position: fixed;
     left: 0;
@@ -321,7 +321,7 @@ body {
     z-index: 1;
 }
 
-.paranja--active {
+.overlay--active {
     display: block;
 }
 
