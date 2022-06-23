@@ -10,9 +10,7 @@ document.addEventListener("DOMContentLoaded",  () => {
     const modalButton = document.querySelector('.button-order')
 
     modalClose.addEventListener('click', () => {
-        modal.classList.toggle('modal--active')
-        paranja.classList.toggle('paranja--active')
-        body.classList.toggle('body-no-overflow')
+        toggleModal(modal, paranja, body) 
     })
 
     cardList.addEventListener('click', (event) => {
@@ -20,9 +18,7 @@ document.addEventListener("DOMContentLoaded",  () => {
         const productName = card.querySelector('.card__title').textContent
 
         if(event.target !== card.querySelector('.card__button')) return
-        modal.classList.toggle('modal--active')
-        paranja.classList.toggle('paranja--active')
-        body.classList.toggle('body-no-overflow')
+        toggleModal(modal, paranja, body) 
 
         // заполнение формы 
         modalForm.querySelector('input[name="product-name"]').value = productName
@@ -38,7 +34,6 @@ document.addEventListener("DOMContentLoaded",  () => {
         const imageTarget = productImageList.filter(item => item === event.target )
         if(imageTarget.length === 0) return
         cardImage.src = event.target.src
-        console.log(event.target.src)
     })  
 
     //валидация
@@ -48,7 +43,6 @@ document.addEventListener("DOMContentLoaded",  () => {
 
     inputName.pattern = '[a-zA-Zа-яА-Я]{1,15}'
 
-    // tel.pattern = "/+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}/"
     inputTel.value="+7(___)___-__-__"
     inputTel.addEventListener("input", mask, false);
     
@@ -66,6 +60,7 @@ document.addEventListener("DOMContentLoaded",  () => {
             tel,
             productItem
         }
+
         const urlParams = new URLSearchParams(paramsString).toString()
         fetch('mail-send.php?' + urlParams)
         .then( () => {
@@ -86,11 +81,10 @@ document.addEventListener("DOMContentLoaded",  () => {
 
     // metrica 
 
-modalButton.addEventListener('click',ym(89276725,'reachGoal','button-order'))
+    modalButton.addEventListener('click',ym(89276725,'reachGoal','button-order'))
 
     
 }) 
-
 
 
 function mask(e) {
@@ -106,5 +100,24 @@ function mask(e) {
     this.value = matrix;
     i = matrix.lastIndexOf(val.substr(-1));
     i < matrix.length && matrix != this.placeholder ? i++ : i = matrix.indexOf("_");
+    setCursorPosition(i, this)
+}
 
-  }
+function setCursorPosition(pos, e) {
+    e.focus();
+    if (e.setSelectionRange) e.setSelectionRange(pos, pos);
+    else if (e.createTextRange) {
+      var range = e.createTextRange();
+      range.collapse(true);
+      range.moveEnd("character", pos);
+      range.moveStart("character", pos);
+      range.select()
+    }
+}
+
+
+function toggleModal(modal, paranja, body) {
+    modal.classList.toggle('modal--active')
+    paranja.classList.toggle('paranja--active')
+    body.classList.toggle('body-no-overflow')
+}

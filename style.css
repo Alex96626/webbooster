@@ -87,6 +87,8 @@ body {
 }
 
 .card__info {
+    position: relative;
+    right: 25px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -353,6 +355,10 @@ body {
     }
 
     .card__image {
+        position: static;
+    }
+
+    .card__info {
         position: static;
     }
 
