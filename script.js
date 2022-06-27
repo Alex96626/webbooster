@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded",  () => {
     const body = document.querySelector('body')
-    const modalClose = document.querySelector('.modal-close')
-    const modal = document.querySelector('.modal')
     const overlay = document.querySelector('.overlay')
 
     const cardList = document.querySelector('.card__list')
@@ -9,16 +7,12 @@ document.addEventListener("DOMContentLoaded",  () => {
     const modalForm = document.querySelector('.modal-form')
     const modalButton = document.querySelector('.button-order')
 
-    modalClose.addEventListener('click', () => {
-        // toggleModal(modal, overlay, body) 
-    })
-
     cardList.addEventListener('click', (event) => {
         const card = event.target.closest('.card')
         const productName = card.querySelector('.card__title').textContent
 
         if(event.target !== card.querySelector('.card__button')) return
-        // toggleModal(modal, overlay, body) 
+
 
         // заполнение формы 
         modalForm.querySelector('input[name="product-name"]').value = productName
@@ -71,6 +65,9 @@ document.addEventListener("DOMContentLoaded",  () => {
           
             setTimeout( () => {
                 massageSend.classList.remove('masage-successful--active')
+                overlay.classList.toggle('overlay--active')
+                body.classList.toggle('body-no-overflow')
+                event.target.closest('.modal').classList.toggle('modal--active')
             },5000)
 
         })
@@ -80,7 +77,22 @@ document.addEventListener("DOMContentLoaded",  () => {
     // metrica 
 
     modalButton.addEventListener('click',ym(89276725,'reachGoal','button-order'))
-    
+   
+    // клик вне формы
+
+    document.addEventListener('click', (event) => {
+        const modalList = [...document.querySelectorAll('[data-show-modal]')]
+        const modalActiveCheck = modalList.some(item => item.classList.contains('modal--active'))
+        if(!modalActiveCheck) return
+        const modalActive = modalList.filter(item => item.classList.contains('modal--active'))[0]
+        if(!event.target.closest('.modal')) {
+            modalActive.classList.remove('modal--active')
+            overlay.classList.toggle('overlay--active')
+            body.classList.toggle('body-no-overflow')
+        }
+       
+
+    })
     // открытие модалки
     document.addEventListener('click', (event) => {
         const modalList = [...document.querySelectorAll('[data-show-modal]')] // список модалок
@@ -99,11 +111,14 @@ document.addEventListener("DOMContentLoaded",  () => {
     // закрытие модалки
 
     document.addEventListener('click', (event) => {
+        console.log(event.target)
         if(!event.target.parentNode.classList.contains('modal-close')) return
         event.target.closest('.modal').classList.toggle('modal--active')
         overlay.classList.toggle('overlay--active')
         body.classList.toggle('body-no-overflow')
     })
+
+    
 
 }) 
 
@@ -135,10 +150,3 @@ function setCursorPosition(pos, e) {
       range.select()
     }
 }
-
-
-// function toggleModal(modal, overlay, body) {
-//     modal.classList.toggle('modal--active')
-//     overlay.classList.toggle('overlay--active')
-//     body.classList.toggle('body-no-overflow')
-// }
