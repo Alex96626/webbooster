@@ -12,10 +12,14 @@
 
 <?php
 
-if(!empty($_GET['name']) and !empty($_GET['tel'])){
-    $name = trim(strip_tags($_GET['name']));
-    $phone = trim(strip_tags($_GET['tel']));
-    $product = trim(strip_tags($_GET['productItem']));
+// if(!empty($_GET['name']) and !empty($_GET['tel'])){
+    echo 'test';
+    var_dump($_POST);
+    var_dump($_GET);
+    var_dump($_REQUEST);
+    $name = trim(strip_tags($_POST['name']));
+    $phone = trim(strip_tags($_POST['tel']));
+    $product = trim(strip_tags($_POST['product-name']));
     
     
     $mailTo = 'work.alex966@gmail.com';
@@ -28,7 +32,7 @@ if(!empty($_GET['name']) and !empty($_GET['tel'])){
     mail($mailTo,$mailTema, $mailMassage,"Content-type:text/html;charset=UTF-8");
     echo 'Успех';
     
-} 
+// } 
 
 ?>
 

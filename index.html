@@ -35,8 +35,8 @@
         </div>
     </header> -->
     <section class="cards container">
-        <div class="card__list">
-            <div class="card">
+        <div class="card__list" data-modal="qq">
+            <div class="card" data-modal="application">
                 <div class="card__image-view">
                     <img class="card__image"  src="images/red-apple.png" alt="">
                 </div>
@@ -75,10 +75,10 @@
                             <li class="card__benefits-item">They're linked to a lowest risk of diabete</li>
                         </ul>
                     </div>
-                    <button class="card__button">order</button>
+                    <button class="card__button" data-modal="application">order</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" >
                 <div class="card__image-view">
                     <img class="card__image"  src="images/pear-slice.png" alt="">
                 </div>
@@ -117,10 +117,10 @@
                             <li class="card__benefits-item">They're linked to a lowest risk of diabete</li>
                         </ul>
                     </div>
-                    <button class="card__button">order</button>
+                    <button class="card__button"  data-modal="application">order</button>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" >
                 <div class="card__image-view">
                     <img class="card__image"  src="images/apricots-slice.png" alt="">
                 </div>
@@ -159,7 +159,7 @@
                             <li class="card__benefits-item">They're linked to a lowest risk of diabete</li>
                         </ul>
                     </div>
-                    <button class="card__button">order</button>
+                    <button class="card__button"  data-modal="application">order</button>
                 </div>
             </div>
             <div class="card">
@@ -201,15 +201,15 @@
                             <li class="card__benefits-item">They're linked to a lowest risk of diabete</li>
                         </ul>
                     </div>
-                    <button class="card__button">order</button>
+                    <button class="card__button"  data-modal="application">order</button>
                 </div>
             </div>
         </div>
     </section>
     
-    <div class="modal">
+    <div class="modal" data-show-modal="application">
         <h2 class="modal__title">Оформаление заказа</h2>
-        <form class="modal-form" id="form__mail-send" action="">
+        <form class="modal-form" id="form__mail-send" action="mail-send.php" method="POST">
             <label for="name">
                 <input class="modal-form__input"  type="text" name="name" placeholder="Имя" required>
             </label>
